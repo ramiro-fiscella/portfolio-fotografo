@@ -2,14 +2,14 @@
 
 ---
 
-<nav class="mobile-navbar">
-  <div class="mobile-navbar__container">
-    <div class="mobile-navbar_brand">
+<nav class="navbar">
+  <div class="navbar__container">
+    <div class="navbar_brand">
       <a href="/">
         <span>Hernan F.</span>
       </a>
     </div>
-    <div class="mobile-navbar__social">
+    <div class="navbar__social">
       <a
         href="https://www.instagram.com/hernanfdev/"
         target="_blank"
@@ -22,10 +22,10 @@
           width="28"
           height="28"
           viewBox="0,0,256,256"
-          style="fill:#444444;"
+          style="fill:var(--secondary-color);"
         >
           <g
-            fill="#444444"
+            fill="var(--secondary-color)"
             fill-rule="nonzero"
             stroke="none"
             stroke-width="1"
@@ -60,10 +60,10 @@
           width="28"
           height="28"
           viewBox="0,0,256,256"
-          style="fill:#444444;"
+          style="fill:var(--secondary-color);"
         >
           <g
-            fill="#444444"
+            fill="var(--secondary-color)"
             fill-rule="nonzero"
             stroke="none"
             stroke-width="1"
@@ -98,10 +98,10 @@
           width="28"
           height="28"
           viewBox="0,0,256,256"
-          style="fill:#444444;"
+          style="fill:var(--secondary-color);"
         >
           <g
-            fill="#444444"
+            fill="var(--secondary-color)"
             fill-rule="nonzero"
             stroke="none"
             stroke-width="1"
@@ -126,8 +126,8 @@
     </div>
   </div>
 
-  <div class="mobile-navbar__menu">
-    <button class="mobile-navbar__menu-btn">
+  <!-- <div class="navbar__menu">
+    <button class="navbar__menu-btn">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -135,10 +135,10 @@
         width="100"
         height="100"
         viewBox="0,0,256,256"
-        style="fill:#444444;"
+        style="fill:var(--primary-color)444;"
       >
         <g
-          fill="#444444"
+          fill="var(--primary-color)444"
           fill-rule="nonzero"
           stroke="none"
           stroke-width="1"
@@ -159,57 +159,66 @@
         >
       </svg>
     </button>
-  </div>
+  </div> -->
 </nav>
 
 <style>
-  .mobile-navbar {
+  .navbar {
+    margin: auto;
     display: flex;
     align-items: start;
     justify-content: space-between;
     padding: 1rem;
-    background-color: #ffffff;
-    color: #444;
+    padding-top: 2rem;
     text-decoration: none;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #33333322;
+
+    backdrop-filter: blur(3px);
   }
-  .mobile-navbar__container {
+  .navbar__container {
     display: flex;
     align-items: start;
-    gap: 1.2rem;
+    justify-content: space-between;
     width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
   }
 
-  .mobile-navbar_brand a {
+  .navbar_brand a {
     text-decoration: none;
   }
-  .mobile-navbar_brand a span {
-    font-size: 1.4rem;
-    color: #444;
+  .navbar_brand a span {
+    font-size: 3rem;
+    line-height: 0.8;
+    color: var(--secondary-color);
   }
 
-  .mobile-navbar__social {
+  .navbar__social {
     display: flex;
     align-items: center;
     gap: 0.8rem;
   }
 
-  .mobile-navbar__menu {
+  .navbar__menu {
     display: flex;
     align-items: center;
   }
-  .mobile-navbar__menu-btn {
+  .navbar__menu-btn {
     background: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
   }
-  .mobile-navbar__menu-btn > svg {
+  .navbar__menu-btn > svg {
     width: 24px;
     height: 24px;
   }
   @media (min-width: 800px) {
-    .mobile-navbar {
-      display: none;
+    .navbar__container {
+      width: 92vw;
     }
   }
 </style>

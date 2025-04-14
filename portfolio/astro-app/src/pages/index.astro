@@ -1,5 +1,4 @@
 ---
-import Navbar from '../components/Navbar.astro';
 import Card from '../components/Card.astro';
 import Layout from '../layouts/Layout.astro';
 import { getAlbums } from '../utils/sanity';
@@ -8,7 +7,6 @@ const albums = await getAlbums();
 ---
 
 <Layout title="Portfolio">
-  <Navbar />
   <section class="cards-container">
     {
       albums.length ? (
@@ -27,6 +25,7 @@ const albums = await getAlbums();
     margin: 0 auto;
     padding: 0.4rem; */
 
+    width: 100vw;
     columns: 2;
     column-gap: 0.4rem;
     margin: 0 auto;
