@@ -1,0 +1,87 @@
+<section class="hero">
+  <div class="hero__image-container">
+    <img
+      class="hero__image"
+      src="https://jamiemurcutt.com.au/wp-content/uploads/2020/05/sydney-wedding-photographer.jpg"
+      alt="Wedding photography hero image"
+    />
+  </div>
+  <div class="hero__content">
+    <h1 class="hero__title">Hernán Fiscella <br /> Fotografía</h1>
+    <p class="hero__quote">
+      Cada imagen es un portal al momento exacto donde ‘El ahora’ se volvió
+      eternidad.
+    </p>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .hero__image-container {
+    flex: 1;
+  }
+
+  .hero__image {
+    object-fit: cover;
+    width: 100%;
+    height: 60vh;
+  }
+
+  .hero__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+
+    padding: 4rem;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .hero__quote {
+    font-size: 1.6rem;
+    font-style: italic;
+  }
+
+  @media (min-width: 800px) {
+    .hero {
+      flex-direction: row;
+    }
+
+    .hero__image-container {
+      flex: 1;
+    }
+
+    .hero__image {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .hero__quote {
+      width: 40vw;
+    }
+  }
+</style>

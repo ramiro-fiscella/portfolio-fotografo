@@ -64,7 +64,7 @@ const album = await getAlbum(slug);
 
       const animate = () => {
         const currentScroll = window.pageYOffset;
-        const parallaxOffset = currentScroll - lastScroll - 100;
+        const parallaxOffset = currentScroll - lastScroll - 40;
         if (parallaxImage) {
           parallaxImage.style.transform = `translateY(${parallaxOffset}px)`;
         }
@@ -172,10 +172,7 @@ const album = await getAlbum(slug);
   .gallery-image {
     width: 100%;
     height: auto;
-    border-radius: 0.4rem;
     object-fit: contain;
-    transform: translateZ(0);
-    animation: fadeInUp 1.5s ease-out 0.9s forwards;
   }
 
   @keyframes fadeInUp {

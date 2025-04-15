@@ -1,11 +1,8 @@
-/* Fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Playfair+Display:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap');
 /* Variables CSS */
 :root {
-  --max-width: 1024px;
+  --max-width: 1440px;
 
-  --primary-color: #333;
+  --primary-color: #444;
   --secondary-color: #fefefe;
   --font-body: 'Carrois Gothic SC', sans-serif;
 
@@ -39,4 +36,11 @@ h4,
 h5,
 h6 {
   font-family: var(--font-headings);
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 2rem 0;
+  text-align: center;
+  color: var(--primary-color);
 }
