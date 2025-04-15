@@ -1,40 +1,32 @@
-// Loading environment variables from .env files
-// https://docs.astro.build/en/guides/configuring-astro/#environment-variables
+// Loading environment variables
 import { loadEnv } from 'vite';
-
-import vercel from '@astrojs/vercel/static';
 import sanity from '@sanity/astro';
-import react from '@astrojs/react';
-const {
-  PUBLIC_SANITY_STUDIO_PROJECT_ID,
-  PUBLIC_SANITY_STUDIO_DATASET,
-  PUBLIC_SANITY_PROJECT_ID,
-  PUBLIC_SANITY_DATASET,
-} = loadEnv(import.meta.env.MODE, process.cwd(), '');
 import { defineConfig } from 'astro/config';
 
-// Different environments use different variables
-const projectId = PUBLIC_SANITY_STUDIO_PROJECT_ID || PUBLIC_SANITY_PROJECT_ID;
-const dataset = PUBLIC_SANITY_STUDIO_DATASET || PUBLIC_SANITY_DATASET;
+// Carga de variables de entorno
+const { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } = loadEnv(
+  import.meta.env.MODE,
+  process.cwd(),
+  ''
+);
 
-// Change this depending on your hosting provider (Vercel, Netlify etc)
-// https://docs.astro.build/en/guides/server-side-rendering/#adding-an-adapter
-import vercel from '@astrojs/vercel/serverless';
+// Usar solo los valores necesarios para el portfolio
+const projectId = PUBLIC_SANITY_PROJECT_ID;
+const dataset = PUBLIC_SANITY_DATASET;
 
-// https://astro.build/config
+// Usar el adaptador estático para sitios completamente estáticos
+import vercel from '@astrojs/vercel/static';
+
 export default defineConfig({
-  // Hybrid+adapter is required to support embedded Sanity Studio
   output: 'static',
   adapter: vercel(),
   integrations: [
     sanity({
       projectId,
       dataset,
-      // studioBasePath: "/admin",
       useCdn: false,
-      // `false` if you want to ensure fresh data
-      apiVersion: '2024-12-08', // Set to date of setup to use the latest API version
+      apiVersion: '2024-12-08',
     }),
-    react(), // Required for Sanity Studio
+    // Eliminamos react(), ya que no se requiere para un portfolio simple.
   ],
 });
