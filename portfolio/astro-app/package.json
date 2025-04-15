@@ -35,5 +35,8 @@
     "rimraf": "5.0.1",
     "typescript": "5.7.2",
     "vite": "^5.3.2"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
