@@ -19,8 +19,7 @@ const dataset = PUBLIC_SANITY_STUDIO_DATASET || PUBLIC_SANITY_DATASET;
 
 // Change this depending on your hosting provider (Vercel, Netlify etc)
 // https://docs.astro.build/en/guides/server-side-rendering/#adding-an-adapter
-// import vercel from '@astrojs/vercel/serverless';
-import netlify from '@astrojs/netlify/functions';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,7 +31,7 @@ export default defineConfig({
       projectId,
       dataset,
       // studioBasePath: "/admin",
-      useCdn: false,
+      // useCdn: false,
       // `false` if you want to ensure fresh data
       apiVersion: '2024-12-08', // Set to date of setup to use the latest API version
     }),
